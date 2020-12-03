@@ -8,21 +8,15 @@
     "node": "10.x"
   },
   "scripts": {
-    "start": "node function.js",
-    "dev": "concurrently \"budo src/plugin.js:bundle.js -d example -d lib --live -- -t scssify -t stringify\" \"now dev .\"",
-    "dist": "browserify src/plugin.js -o public/aframe-inspector-plugin-recast.js -t scssify -t stringify",
-    "predeploy": "npm run dist",
-    "deploy": "now . --prod",
-    "docs": "node scripts/docs"
+    "start": "node index.js",
+    "dev": "nodemon .",
+    "dist": "browserify src/plugin.js -o recast/aframe-inspector-plugin-recast.js -t scssify -t stringify"
   },
   "author": "Don McCurdy <dm@donmccurdy.com> (https://www.donmccurdy.com)",
   "license": "MIT",
   "devDependencies": {
     "browserify": "^14.5.0",
-    "budo": "^11.6.3",
-    "concurrently": "^3.5.1",
     "nodemon": "^1.17.4",
-    "replace": "^1.0.0",
     "scssify": "^3.0.1",
     "stringify": "^5.2.0"
   },

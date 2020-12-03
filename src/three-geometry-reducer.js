@@ -2,7 +2,7 @@ const BufferGeometryUtils = require('../lib/BufferGeometryUtils');
 
 const DEFAULT_OPTIONS = {
   maxExtent: 500,
-  maxFileSize: 25000000,
+  maxFileSize: Number.MAX_SAFE_INTEGER, //25000000,
   ignore: '',
 };
 

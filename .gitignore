@@ -1,2 +1,4 @@
 node_modules
 example/assets/tmp
+.DS_Store
+.vercel
