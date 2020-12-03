@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon .",
-    "dist": "browserify src/plugin.js -o recast/aframe-inspector-plugin-recast.js -t scssify -t stringify"
+    "dist": "browserify src/plugin.js -o public/aframe-inspector-plugin-recast.js -t scssify -t stringify"
   },
   "author": "Don McCurdy <dm@donmccurdy.com> (https://www.donmccurdy.com)",
   "license": "MIT",
