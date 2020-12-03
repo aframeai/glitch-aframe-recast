@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, World! • A-Frame</title>
+    <meta name="description" content="Hello, World! • A-Frame" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-gltf-part-component/dist/aframe-gltf-part-component.min.js"></script>
+    <script src="../aframe-inspector-plugin-recast.js"></script>
+  </head>
+  <body>
+    <a-scene inspector-plugin-recast background="color:#999">
+      <a-assets>
+        <a-asset-item id="lego" src="assets/key.glb"></a-asset-item>
+        <a-asset-item id="navmesh" src="assets/navmesh.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-entity id="rig" movement-controls="constrainToNavMesh: true">
+        <a-entity
+          position="0 1.6 0"
+          id="camera"
+          camera
+          look-controls="pointerLockEnabled: true"
+        ></a-entity>
+      </a-entity>
+      <a-entity scale="0.5 0.5 0.5">
+        <a-entity
+          position="0 0 0"
+          rotation="180 0 0"
+          gltf-model="#lego"
+        ></a-entity>
+        <a-plane
+          color="#363"
+          height="17"
+          width="20"
+          position="5 -0.1 -0.5"
+          rotation="-90 0 0"
+          visible="true"
+        ></a-plane>
+
+        <a-entity
+          nav-mesh
+          gltf-part="src: #navmesh; part: AuxScene"
+          material="transparent:true; opacity:0.3"
+        ></a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
