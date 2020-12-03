@@ -9136,7 +9136,7 @@ class RecastPlugin {
  */
 AFRAME.registerComponent('inspector-plugin-recast', {
   schema: {
-    serviceURL: {default: 'http://localhost:3000'},
+    serviceURL: {default: 'https://aframe-recast.glitch.me'},
   },
   init: function () {
     const wrapEl = document.createElement('div');
@@ -9235,7 +9235,7 @@ const BufferGeometryUtils = require('../lib/BufferGeometryUtils');
 
 const DEFAULT_OPTIONS = {
   maxExtent: 500,
-  maxFileSize: Number.MAX_SAFE_INTEGER,//25000000,
+  maxFileSize: Number.MAX_SAFE_INTEGER, //25000000,
   ignore: '',
 };
 
@@ -9345,7 +9345,6 @@ class GeometryReducer {
     const bodyLength = position.length * Float32Array.BYTES_PER_ELEMENT
       + index.length * Int32Array.BYTES_PER_ELEMENT;
     if (bodyLength === 0) this.fail('No mesh data found.');
-    
     if (bodyLength > maxFileSize) {
       throw new Error(
         `Upload size cannot exceed ${maxFileSize / 1e6}mb, found ${bodyLength}mb. `

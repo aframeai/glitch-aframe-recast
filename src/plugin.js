@@ -302,7 +302,7 @@ class RecastPlugin {
  */
 AFRAME.registerComponent('inspector-plugin-recast', {
   schema: {
-    serviceURL: {default: 'httos://aframe-recast.glitch.com'},
+    serviceURL: {default: 'https://aframe-recast.glitch.me'},
   },
   init: function () {
     const wrapEl = document.createElement('div');
