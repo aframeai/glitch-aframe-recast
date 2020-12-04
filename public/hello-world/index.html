@@ -15,7 +15,6 @@
     >
       <a-assets>
         <a-asset-item id="navmesh" src="navmesh.gltf"></a-asset-item>
-        <a-asset-item id="lego" src="lego.glb"></a-asset-item>
       </a-assets>
 
       <a-entity id="rig" movement-controls="constrainToNavMesh: true">
@@ -57,7 +56,6 @@
         color="#7BC8A4"
         shadow
       ></a-plane>
-      <a-entity id="wtf" gltf-model="#reimport" scale="0.5 -0.5 0.5"></a-entity>
       <a-entity        
         nav-mesh
         gltf-part="src: #navmesh; part: AuxScene"
